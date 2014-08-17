@@ -24,25 +24,25 @@
                 <div class="regline line35 ">
                     <div class="w80 m235 pull-right fleft mp10">邮箱/手机</div>
                     <div class="w320 fleft ">
-                        <input type="text" name="" value="" class="regbtn1">
+                        <input type="text" id="txt_username" name="" value="" class="regbtn1">
                     </div>
-                    <div class="w320 fleft  pull-left p10 color-hui">是否注册过</div>
+                    <div class="w320 fleft  pull-left p10 color-hui" id="tips_username">是否注册过</div>
                     <div class="cbr"></div>
                 </div>
                 <div class="regline line35">
                     <div class="w80 m235 pull-right fleft mp10">登录密码</div>
                     <div class="w320  fleft">
-                        <input type="text" name="" value="" class="regbtn1">
+                        <input type="text" id="txt_pwd" name="" value="" class="regbtn1">
                     </div>
-                    <div class="w320 fleft  pull-left p10 color-hui">是否正确</div>
+                    <div class="w320 fleft  pull-left p10 color-hui" id="tips_pwd">是否正确</div>
                     <div class="cbr"></div>
                 </div>
                 <div class="regline line35">
                     <div class="w80 m235 pull-right fleft mp10">确认密码</div>
                     <div class="w320  fleft">
-                        <input type="text" name="" value="" class="regbtn1">
+                        <input type="text" id="txt_pwdconfirm" name="" value="" class="regbtn1">
                     </div>
-                    <div class="w320 fleft  pull-left p10 color-hui">是否正确</div>
+                    <div class="w320 fleft  pull-left p10 color-hui" id="tips_pwdconfirm">是否正确</div>
                     <div class="cbr"></div>
                 </div>
                 <div class="regline line">
@@ -75,12 +75,23 @@
     <script src="js/util.js"></script>
 <script>
     $(function () {
+        var txt = {
+            username: $("#txt_username"),
+            pwd: $("#txt_pwd"),
+            pwdconfirm:$("#txt_pwdcomfirm")
+        };
+        var tips = {
+            username: $("#tips_username"),
+            pwd: $("#tips_pwd"),
+            pwdconfirm: $("#tips_pwdcomfirm")
+        };
+
         var callback = function (response) {
             alert("成功")
         };
         var pwd = $.md5("123");
         var param = 'userna=sf1&pwd=' + pwd;
-        ajaxsend(1001, param, callback);
+        //ajaxsend(1001, param, callback);
         //var mac = $.md5('actionid=1001&userna=sf1&pwd=' + pwd + '&key=3321pc3321pc');
         
         //$.ajax(
