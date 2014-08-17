@@ -80,54 +80,27 @@
     </div>
     <div class="cor-line-bottom cbr mt10 margin-top-60">
     </div>
+    <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.md5.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#logintxt").focus(function () {
-                if ($(this).val() == "用户名") {
-                    $(this).val("");
-                }
-            });
-            $("#logintxt").blur(function () {
-                if ($(this).val() == "") {
-                    $(this).val("用户名");
-                }
-            });
-            $("#loginpaw").focus(function () {
-                if ($(this).val() == "密 码") {
-                    $(this).val("");
-                }
-            });
-            $("#loginpaw").blur(function () {
-                if ($(this).val() == "") {
-                    $(this).val("密 码");
+        $(function () {
+            var pwd = $.md5("123");
+            var mac = $.md5('actionid=1001&userna=sf1236&pwd=' + pwd + '&key=3321pc3321pc');
+
+            $.ajax(
+            {
+                url: "Service.aspx",//调用GetData方法
+                type: "post",
+                dataType: "json",
+                contentType: "application/json",
+                data: 'actionid=1001&userna=sf1236&pwd=' + pwd + '&key=3321pc&mac=' + mac,//传递参数值（参数名叫value)
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (request, message, e) {
+                    alert("err");
                 }
             });
         });
-        function login() {
-            var name = $("#logintxt").val();
-            var pwd = $("#loginpaw").val();
-            var autologin = $("#autologin").is(':checked');
-            if (name == "" || name == "用户名") {
-                alert("用户名不能为空!");
-                return;
-            }
-            if (pwd == "" || pwd == "密 码") {
-                alert("密码不能为空!");
-                return;
-            }
-            $.post("Ajax/Login.ashx", { MethodType: "UserLogin", Name: name, Pwd: pwd, Autologin: autologin },
-            function (data) {
-                if (data.result) {
-                    alert("登录成功!");
-                    setTimeout(function () { window.location.href = "index.aspx" }, 1500);
-                } else {
-                    alert(zdata.msg);
-                }
-            });
-        }
-
-        function Regist() {
-            window.location.href = "Registration.aspx";
-        }
     </script>
 </asp:Content>
