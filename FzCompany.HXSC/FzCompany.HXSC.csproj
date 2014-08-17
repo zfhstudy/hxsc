@@ -179,6 +179,7 @@
     <Content Include="js\play - 副本.js" />
     <Content Include="js\play.js" />
     <Content Include="js\slider.js" />
+    <Content Include="js\util.js" />
     <Content Include="login.aspx" />
     <Content Include="login.html" />
     <Content Include="manageBook.aspx" />
@@ -204,6 +205,7 @@
     <Content Include="pay.html" />
     <Content Include="recharge.aspx" />
     <Content Include="recharge.html" />
+    <Content Include="Register.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Registration.html" />
     <Content Include="returnGoods.aspx" />
@@ -415,6 +417,13 @@
     </Compile>
     <Compile Include="recharge.aspx.designer.cs">
       <DependentUpon>recharge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
