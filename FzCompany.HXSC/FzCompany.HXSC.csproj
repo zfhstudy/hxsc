@@ -81,6 +81,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\css.css" />
+    <Content Include="CSS\slider.css" />
     <Content Include="DLL\EntityFramework.dll" />
     <Content Include="DLL\FzCompany.Core.dll" />
     <Content Include="DLL\FzCompany.HXSC.BLL.dll" />
@@ -89,6 +91,92 @@
     <Content Include="DLL\FzCompany.HXSC.Model.dll" />
     <Content Include="DLL\Newtonsoft.Json.dll" />
     <Content Include="DLL\NLog.dll" />
+    <Content Include="images\ad.jpg" />
+    <Content Include="images\ad1.jpg" />
+    <Content Include="images\ad10.jpg" />
+    <Content Include="images\ad11.jpg" />
+    <Content Include="images\ad12.jpg" />
+    <Content Include="images\ad2.jpg" />
+    <Content Include="images\ad3.jpg" />
+    <Content Include="images\ad4.jpg" />
+    <Content Include="images\ad6.jpg" />
+    <Content Include="images\ad7.jpg" />
+    <Content Include="images\ad8.jpg" />
+    <Content Include="images\ad9.jpg" />
+    <Content Include="images\adserver\ad1.jpg" />
+    <Content Include="images\adserver\ad2.jpg" />
+    <Content Include="images\adserver\ad3.jpg" />
+    <Content Include="images\adserver\ad4.jpg" />
+    <Content Include="images\adserver\ad5.jpg" />
+    <Content Include="images\barn1.jpg" />
+    <Content Include="images\barn2.jpg" />
+    <Content Include="images\book1.jpg" />
+    <Content Include="images\book2.jpg" />
+    <Content Include="images\book3.jpg" />
+    <Content Include="images\book4.jpg" />
+    <Content Include="images\book5.jpg" />
+    <Content Include="images\btn.png" />
+    <Content Include="images\buy.jpg" />
+    <Content Include="images\cziocn1.jpg" />
+    <Content Include="images\down.jpg" />
+    <Content Include="images\icon1.jpg" />
+    <Content Include="images\icon2.jpg" />
+    <Content Include="images\icon3.jpg" />
+    <Content Include="images\icon4.jpg" />
+    <Content Include="images\icon5.jpg" />
+    <Content Include="images\icon6.jpg" />
+    <Content Include="images\kh1.jpg" />
+    <Content Include="images\kh2.jpg" />
+    <Content Include="images\kh3.jpg" />
+    <Content Include="images\kh4.jpg" />
+    <Content Include="images\khbg.jpg" />
+    <Content Include="images\khcenter.jpg" />
+    <Content Include="images\leftbtn1.jpg" />
+    <Content Include="images\leftbtn2.jpg" />
+    <Content Include="images\licon1.jpg" />
+    <Content Include="images\licon2.jpg" />
+    <Content Include="images\licon3.jpg" />
+    <Content Include="images\licon4.jpg" />
+    <Content Include="images\llogo.jpg" />
+    <Content Include="images\login\ad1.jpg" />
+    <Content Include="images\login\ad2.jpg" />
+    <Content Include="images\login\ad3.jpg" />
+    <Content Include="images\login\ad4.jpg" />
+    <Content Include="images\login\login.jpg" />
+    <Content Include="images\login\password.jpg" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\month\icon_block.jpg" />
+    <Content Include="images\month\icon_orange.jpg" />
+    <Content Include="images\month\icon_pl.jpg" />
+    <Content Include="images\month\icon_pl2.jpg" />
+    <Content Include="images\month\num1.jpg" />
+    <Content Include="images\month\people.jpg" />
+    <Content Include="images\month\xing.jpg" />
+    <Content Include="images\newbooktitle.jpg" />
+    <Content Include="images\next.png" />
+    <Content Include="images\phone.png" />
+    <Content Include="images\pj.jpg" />
+    <Content Include="images\pjx.jpg" />
+    <Content Include="images\pjx2.jpg" />
+    <Content Include="images\prev.png" />
+    <Content Include="images\rightbtn1.jpg" />
+    <Content Include="images\rightbtn2.jpg" />
+    <Content Include="images\search.jpg" />
+    <Content Include="images\shop.jpg" />
+    <Content Include="images\shop.png" />
+    <Content Include="images\SR.jpg" />
+    <Content Include="images\success.jpg" />
+    <Content Include="images\triggers.png" />
+    <Content Include="images\triggers_cur.png" />
+    <Content Include="images\zc1icon.jpg" />
+    <Content Include="images\zc2icon.jpg" />
+    <Content Include="js\index.min.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery.md5.js" />
+    <Content Include="js\pislider.min.js" />
+    <Content Include="js\play - 副本.js" />
+    <Content Include="js\play.js" />
+    <Content Include="js\slider.js" />
     <Content Include="Service.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -110,6 +198,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
