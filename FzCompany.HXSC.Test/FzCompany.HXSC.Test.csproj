@@ -106,9 +106,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\FzCompany.Core\FzCompany.Core.csproj">
       <Project>{133912A5-AFC5-4230-8BCA-6EA2039641DB}</Project>
