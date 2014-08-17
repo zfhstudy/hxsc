@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC280A34-68A9-4B77-BBA5-98EBF9184E86}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FzCompany.HXSC.BLL</RootNamespace>
+    <AssemblyName>FzCompany.HXSC.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\FzCompany.HXSC\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action\Action1001.cs" />
+    <Compile Include="Action\BaseAction.cs" />
+    <Compile Include="Action\Action1002.cs" />
+    <Compile Include="Action\Action1003.cs" />
+    <Compile Include="Action\Action1004.cs" />
+    <Compile Include="Action\Action1005.cs" />
+    <Compile Include="Action\Action1006.cs" />
+    <Compile Include="Action\Action1007.cs" />
+    <Compile Include="Action\Action1008.cs" />
+    <Compile Include="Action\Action1009.cs" />
+    <Compile Include="Action\Action1010.cs" />
+    <Compile Include="Action\Action1011.cs" />
+    <Compile Include="Action\Action1012.cs" />
+    <Compile Include="Action\Action1013.cs" />
+    <Compile Include="Action\Action1014.cs" />
+    <Compile Include="Action\Action1015.cs" />
+    <Compile Include="Action\Action1016.cs" />
+    <Compile Include="Action\Action1017.cs" />
+    <Compile Include="Action\Action1018.cs" />
+    <Compile Include="Action\Action1019.cs" />
+    <Compile Include="Action\Action1020.cs" />
+    <Compile Include="Action\Action1021.cs" />
+    <Compile Include="Action\Action1022.cs" />
+    <Compile Include="Action\Action1023.cs" />
+    <Compile Include="Action\Action1024.cs" />
+    <Compile Include="Action\Action1025.cs" />
+    <Compile Include="Action\Action1026.cs" />
+    <Compile Include="Action\Action1027.cs" />
+    <Compile Include="Action\Action1028.cs" />
+    <Compile Include="Action\Action1029.cs" />
+    <Compile Include="Action\Action1030.cs" />
+    <Compile Include="Action\Action1031.cs" />
+    <Compile Include="Action\Action1032.cs" />
+    <Compile Include="Action\Action1033.cs" />
+    <Compile Include="Action\Action1034.cs" />
+    <Compile Include="Action\Action1035.cs" />
+    <Compile Include="Action\Action1036.cs" />
+    <Compile Include="Action\Action1037.cs" />
+    <Compile Include="Action\Action1038.cs" />
+    <Compile Include="Action\Action1039.cs" />
+    <Compile Include="Action\Action2001.cs" />
+    <Compile Include="Action\Action2006.cs" />
+    <Compile Include="Action\Action2007.cs" />
+    <Compile Include="BaseLog.cs" />
+    <Compile Include="BasePack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FzCompany.Core\FzCompany.Core.csproj">
+      <Project>{133912A5-AFC5-4230-8BCA-6EA2039641DB}</Project>
+      <Name>FzCompany.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FzCompany.HXSC.EfModel\FzCompany.HXSC.EfModel.csproj">
+      <Project>{80FB74B1-5E2F-4F9B-9472-1E127D556B6B}</Project>
+      <Name>FzCompany.HXSC.EfModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
