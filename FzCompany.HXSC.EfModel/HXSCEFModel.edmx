@@ -1,0 +1,1190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TenPayModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TenPayModelStoreContainer">
+          <EntitySet Name="Auditing" EntityType="TenPayModel.Store.Auditing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Audiuser" EntityType="TenPayModel.Store.Audiuser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Bill" EntityType="TenPayModel.Store.Bill" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Bookmark" EntityType="TenPayModel.Store.Bookmark" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="TenPayModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Clickrecord" EntityType="TenPayModel.Store.Clickrecord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comments" EntityType="TenPayModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="TenPayModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Directory" EntityType="TenPayModel.Store.Directory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Favorites" EntityType="TenPayModel.Store.Favorites" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invoice" EntityType="TenPayModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Item" EntityType="TenPayModel.Store.Item" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LatestDevelopments" EntityType="TenPayModel.Store.LatestDevelopments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Mail" EntityType="TenPayModel.Store.Mail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderD" EntityType="TenPayModel.Store.OrderD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderH" EntityType="TenPayModel.Store.OrderH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Preview" EntityType="TenPayModel.Store.Preview" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Province" EntityType="TenPayModel.Store.Province" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Region" EntityType="TenPayModel.Store.Region" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReturnedD" EntityType="TenPayModel.Store.ReturnedD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReturnedH" EntityType="TenPayModel.Store.ReturnedH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Search" EntityType="TenPayModel.Store.Search" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Shoppingbasket" EntityType="TenPayModel.Store.Shoppingbasket" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UseriMail" EntityType="TenPayModel.Store.UseriMail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserInfo" EntityType="TenPayModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Work" EntityType="TenPayModel.Store.Work" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Auditing">
+          <Key>
+            <PropertyRef Name="Auditingid" />
+          </Key>
+          <Property Name="Auditingid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Audiuserid" Type="int" Nullable="false" />
+          <Property Name="Start" Type="int" Nullable="false" />
+          <Property Name="Levelx" Type="int" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="Auditime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Audiuser">
+          <Key>
+            <PropertyRef Name="Audiuserid" />
+          </Key>
+          <Property Name="Audiuserid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Audiuserna" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Levelx" Type="int" Nullable="false" />
+          <Property Name="Pwd" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Billid" />
+          </Key>
+          <Property Name="Billid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="Amt" Type="float" Nullable="false" />
+          <Property Name="Isexpend" Type="bit" Nullable="false" />
+          <Property Name="Bank" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Countryid" Type="int" Nullable="false" />
+          <Property Name="Orderid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Purpose" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Bookmark">
+          <Key>
+            <PropertyRef Name="Bookmarkid" />
+          </Key>
+          <Property Name="Bookmarkid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Position" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Cityid" />
+          </Key>
+          <Property Name="Cityid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cityna" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Provinceid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clickrecord">
+          <Key>
+            <PropertyRef Name="Clickrecordid" />
+          </Key>
+          <Property Name="Clickrecordid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Commentsid" />
+          </Key>
+          <Property Name="Commentsid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" MaxLength="50" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="Star" Type="int" Nullable="false" />
+          <Property Name="Parentscommentsid" Type="int" Nullable="false" />
+          <Property Name="Commentstxt" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Countryid" />
+          </Key>
+          <Property Name="Countryid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Countryna" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Currency" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Directory">
+          <Key>
+            <PropertyRef Name="Directoryid" />
+          </Key>
+          <Property Name="Directoryid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Directoryna" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Parentsid" Type="int" Nullable="false" />
+          <Property Name="Levelx" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="FavoritesId" />
+          </Key>
+          <Property Name="FavoritesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ItmeId" Type="int" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="DelTime" Type="datetime" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Name="InvoiceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Orderid" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Amt" Type="float" Nullable="false" />
+          <Property Name="Unit" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Tax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Bank" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Account" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Companyaddress" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Itemid" />
+          </Key>
+          <Property Name="Itemid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Itemna" Type="varchar" MaxLength="50" />
+          <Property Name="Directoryid" Type="int" />
+          <Property Name="Isbn" Type="varchar" MaxLength="50" />
+          <Property Name="Languageid" Type="int" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Cnmarc" Type="varchar" MaxLength="250" />
+          <Property Name="Cip" Type="varchar" MaxLength="250" />
+          <Property Name="Originalna" Type="varchar" MaxLength="250" />
+          <Property Name="Originallanguageid" Type="int" />
+          <Property Name="Originalprice" Type="float" />
+          <Property Name="Originalcountryid" Type="int" />
+          <Property Name="Press" Type="varchar" MaxLength="250" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Editiontiem" Type="datetime" />
+          <Property Name="Firsteditiontime" Type="datetime" />
+          <Property Name="Edition" Type="int" />
+          <Property Name="Timex" Type="int" />
+          <Property Name="Volume" Type="int" />
+          <Property Name="Volumesize" Type="int" />
+          <Property Name="Author" Type="varchar" MaxLength="250" />
+          <Property Name="Translator" Type="varchar" MaxLength="250" />
+          <Property Name="Compilingmethodid" Type="int" />
+          <Property Name="Chief" Type="varchar" MaxLength="250" />
+          <Property Name="Wordsnumber" Type="int" />
+          <Property Name="Pagenumber" Type="int" />
+          <Property Name="Editorcharge" Type="varchar" MaxLength="250" />
+          <Property Name="Booknumber" Type="int" />
+          <Property Name="Editorcopy" Type="varchar" MaxLength="250" />
+          <Property Name="Deitorplanning" Type="varchar" MaxLength="250" />
+          <Property Name="Deitoracquiring" Type="varchar" MaxLength="250" />
+          <Property Name="PlateDesign" Type="varchar" MaxLength="250" />
+          <Property Name="CoverDesign" Type="varchar" MaxLength="250" />
+          <Property Name="OverallDesign" Type="varchar" MaxLength="250" />
+          <Property Name="Published" Type="varchar" MaxLength="250" />
+          <Property Name="Reader" Type="varchar" MaxLength="250" />
+          <Property Name="Draw" Type="varchar" MaxLength="250" />
+          <Property Name="Typesetting" Type="varchar" MaxLength="250" />
+          <Property Name="Printing" Type="varchar" MaxLength="250" />
+          <Property Name="Createtime" Type="datetime" />
+          <Property Name="ShelfTime" Type="datetime" />
+          <Property Name="Maxnumber" Type="int" />
+          <Property Name="Number" Type="int" />
+          <Property Name="Start" Type="int" />
+          <Property Name="Undertime" Type="datetime" />
+          <Property Name="Coverurl" Type="varchar" MaxLength="250" />
+          <Property Name="Filerul" Type="varchar" MaxLength="250" />
+          <Property Name="Itemkey" Type="varchar" MaxLength="250" />
+          <Property Name="Ebook" Type="bit" />
+          <Property Name="Itemno" Type="int" />
+        </EntityType>
+        <EntityType Name="LatestDevelopments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="DevelopmentContent" Type="text" Nullable="false" />
+          <Property Name="Createtor" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mail">
+          <Key>
+            <PropertyRef Name="Mailid" />
+          </Key>
+          <Property Name="Mailid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Genre" Type="int" Nullable="false" />
+          <Property Name="Classify" Type="int" Nullable="false" />
+          <Property Name="Contenttxt" Type="varchar" Nullable="false" MaxLength="5000" />
+          <Property Name="Levelx" Type="int" Nullable="false" />
+          <Property Name="Parentsmailid" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="OrderD">
+          <Key>
+            <PropertyRef Name="Orderid" />
+          </Key>
+          <Property Name="Orderid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Orderhid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Serial" Type="int" />
+          <Property Name="Itemid" Type="int" />
+          <Property Name="Number" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Amt" Type="float" />
+          <Property Name="Discount" Type="float" />
+          <Property Name="Realamt" Type="float" />
+          <Property Name="Start" Type="int" />
+          <Property Name="Createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OrderH">
+          <Key>
+            <PropertyRef Name="OrderhId" />
+          </Key>
+          <Property Name="OrderhId" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="UserId" Type="varchar" MaxLength="32" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Start" Type="int" />
+          <Property Name="Amt" Type="float" />
+          <Property Name="Discount" Type="float" />
+          <Property Name="Realamt" Type="float" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="ReceiveAddress" Type="varchar" MaxLength="250" />
+          <Property Name="Express" Type="varchar" MaxLength="50" />
+          <Property Name="ExpressNo" Type="varchar" MaxLength="15" />
+          <Property Name="ExpressTime" Type="datetime" />
+          <Property Name="Source" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Preview">
+          <Key>
+            <PropertyRef Name="Previewid" />
+          </Key>
+          <Property Name="Previewid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="Provinceid" />
+          </Key>
+          <Property Name="Provinceid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Provincena" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Countryid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Regionid" />
+          </Key>
+          <Property Name="Regionid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Regionna" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cityid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReturnedD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Returnedid" Type="int" Nullable="false" />
+          <Property Name="Serial" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Amt" Type="float" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReturnedH">
+          <Key>
+            <PropertyRef Name="ReturnedId" />
+          </Key>
+          <Property Name="ReturnedId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Orderid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Amt" Type="float" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Search">
+          <Key>
+            <PropertyRef Name="Searchid" />
+          </Key>
+          <Property Name="Searchid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Searchtxt" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shoppingbasket">
+          <Key>
+            <PropertyRef Name="Shoppingbasketid" />
+          </Key>
+          <Property Name="Shoppingbasketid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Itemid" Type="int" Nullable="false" />
+          <Property Name="Createtime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="UseriMail">
+          <Key>
+            <PropertyRef Name="UseriMailId" />
+          </Key>
+          <Property Name="UseriMailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Mailid" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Name="Userid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Userna" Type="varchar" MaxLength="20" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="Pwd" Type="varchar" MaxLength="50" />
+          <Property Name="Verification" Type="varchar" MaxLength="20" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Start" Type="int" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="250" />
+          <Property Name="Balance" Type="float" />
+          <Property Name="Sex" Type="varchar" MaxLength="2" />
+          <Property Name="CountryId" Type="int" />
+          <Property Name="ProvinceId" Type="int" />
+          <Property Name="CityId" Type="int" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="Street" Type="varchar" MaxLength="250" />
+          <Property Name="WorkId" Type="int" />
+          <Property Name="WorkDetail" Type="varchar" MaxLength="250" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="Workid" />
+          </Key>
+          <Property Name="Workid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Workna" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TenPayModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="HXSCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OrderH" EntityType="TenPayModel.OrderH" />
+          <EntitySet Name="UserInfo" EntityType="TenPayModel.UserInfo" />
+          <EntitySet Name="Favorites" EntityType="TenPayModel.Favorites" />
+          <EntitySet Name="Bill" EntityType="TenPayModel.Bill" />
+          <EntitySet Name="Comments" EntityType="TenPayModel.Comments" />
+          <EntitySet Name="Invoice" EntityType="TenPayModel.Invoice" />
+          <EntitySet Name="Mail" EntityType="TenPayModel.Mail" />
+          <EntitySet Name="UseriMail" EntityType="TenPayModel.UseriMail" />
+          <EntitySet Name="OrderD" EntityType="TenPayModel.OrderD" />
+          <EntitySet Name="ReturnedD" EntityType="TenPayModel.ReturnedD" />
+          <EntitySet Name="ReturnedH" EntityType="TenPayModel.ReturnedH" />
+          <EntitySet Name="Shoppingbasket" EntityType="TenPayModel.Shoppingbasket" />
+          <EntitySet Name="Clickrecord" EntityType="TenPayModel.Clickrecord" />
+          <EntitySet Name="Preview" EntityType="TenPayModel.Preview" />
+          <EntitySet Name="Bookmark" EntityType="TenPayModel.Bookmark" />
+          <EntitySet Name="City" EntityType="TenPayModel.City" />
+          <EntitySet Name="Country" EntityType="TenPayModel.Country" />
+          <EntitySet Name="Province" EntityType="TenPayModel.Province" />
+          <EntitySet Name="Region" EntityType="TenPayModel.Region" />
+          <EntitySet Name="Work" EntityType="TenPayModel.Work" />
+          <EntitySet Name="Item" EntityType="TenPayModel.Item" />
+          <EntitySet Name="Search" EntityType="TenPayModel.Search" />
+          <EntitySet Name="Auditing" EntityType="TenPayModel.Auditing" />
+          <EntitySet Name="Audiuser" EntityType="TenPayModel.Audiuser" />
+          <EntitySet Name="Directory" EntityType="TenPayModel.Directory" />
+          <EntitySet Name="LatestDevelopments" EntityType="TenPayModel.LatestDevelopments" />
+        </EntityContainer>
+        <EntityType Name="OrderH">
+          <Key>
+            <PropertyRef Name="OrderhId" />
+          </Key>
+          <Property Type="String" Name="OrderhId" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserId" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" />
+          <Property Type="Int32" Name="Start" />
+          <Property Type="Double" Name="Amt" />
+          <Property Type="Double" Name="Discount" />
+          <Property Type="Double" Name="Realamt" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ReceiveAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Express" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ExpressNo" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ExpressTime" />
+          <Property Type="String" Name="Source" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Userid" />
+          </Key>
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Userna" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UserName" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Pwd" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Verification" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Birthday" />
+          <Property Type="DateTime" Name="CreateTime" />
+          <Property Type="Int32" Name="Start" />
+          <Property Type="String" Name="ImageUrl" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Balance" />
+          <Property Type="String" Name="Sex" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CountryId" />
+          <Property Type="Int32" Name="ProvinceId" />
+          <Property Type="Int32" Name="CityId" />
+          <Property Type="Int32" Name="RegionId" />
+          <Property Type="String" Name="Street" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="WorkId" />
+          <Property Type="String" Name="WorkDetail" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="FavoritesId" />
+          </Key>
+          <Property Type="Int32" Name="FavoritesId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ItmeId" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+          <Property Type="DateTime" Name="DelTime" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="Billid" />
+          </Key>
+          <Property Type="Int32" Name="Billid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="Double" Name="Amt" Nullable="false" />
+          <Property Type="Boolean" Name="Isexpend" Nullable="false" />
+          <Property Type="String" Name="Bank" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Countryid" Nullable="false" />
+          <Property Type="String" Name="Orderid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Purpose" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Commentsid" />
+          </Key>
+          <Property Type="Int32" Name="Commentsid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="Int32" Name="Star" Nullable="false" />
+          <Property Type="Int32" Name="Parentscommentsid" Nullable="false" />
+          <Property Type="String" Name="Commentstxt" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceId" />
+          </Key>
+          <Property Type="Int32" Name="InvoiceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Orderid" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amt" Nullable="false" />
+          <Property Type="String" Name="Unit" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Tax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Bank" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Account" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Companyaddress" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Mail">
+          <Key>
+            <PropertyRef Name="Mailid" />
+          </Key>
+          <Property Type="Int32" Name="Mailid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Genre" Nullable="false" />
+          <Property Type="Int32" Name="Classify" Nullable="false" />
+          <Property Type="String" Name="Contenttxt" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Levelx" Nullable="false" />
+          <Property Type="Int32" Name="Parentsmailid" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UseriMail">
+          <Key>
+            <PropertyRef Name="UseriMailId" />
+          </Key>
+          <Property Type="Int32" Name="UseriMailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Mailid" Nullable="false" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OrderD">
+          <Key>
+            <PropertyRef Name="Orderid" />
+          </Key>
+          <Property Type="Int32" Name="Orderid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Orderhid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Serial" />
+          <Property Type="Int32" Name="Itemid" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="Double" Name="Price" />
+          <Property Type="Double" Name="Amt" />
+          <Property Type="Double" Name="Discount" />
+          <Property Type="Double" Name="Realamt" />
+          <Property Type="Int32" Name="Start" />
+          <Property Type="DateTime" Name="Createtime" />
+        </EntityType>
+        <EntityType Name="ReturnedD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Returnedid" Nullable="false" />
+          <Property Type="String" Name="Serial" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="Double" Name="Amt" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReturnedH">
+          <Key>
+            <PropertyRef Name="ReturnedId" />
+          </Key>
+          <Property Type="Int32" Name="ReturnedId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Orderid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Amt" Nullable="false" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shoppingbasket">
+          <Key>
+            <PropertyRef Name="Shoppingbasketid" />
+          </Key>
+          <Property Type="Int32" Name="Shoppingbasketid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="Int32" Name="State" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Clickrecord">
+          <Key>
+            <PropertyRef Name="Clickrecordid" />
+          </Key>
+          <Property Type="Int32" Name="Clickrecordid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Preview">
+          <Key>
+            <PropertyRef Name="Previewid" />
+          </Key>
+          <Property Type="Int32" Name="Previewid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Bookmark">
+          <Key>
+            <PropertyRef Name="Bookmarkid" />
+          </Key>
+          <Property Type="Int32" Name="Bookmarkid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="String" Name="Position" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Cityid" />
+          </Key>
+          <Property Type="Int32" Name="Cityid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Cityna" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Provinceid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Countryid" />
+          </Key>
+          <Property Type="Int32" Name="Countryid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Countryna" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Currency" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Province">
+          <Key>
+            <PropertyRef Name="Provinceid" />
+          </Key>
+          <Property Type="Int32" Name="Provinceid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Provincena" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Countryid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Regionid" />
+          </Key>
+          <Property Type="Int32" Name="Regionid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Regionna" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Cityid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Work">
+          <Key>
+            <PropertyRef Name="Workid" />
+          </Key>
+          <Property Type="Int32" Name="Workid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Workna" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Itemid" />
+          </Key>
+          <Property Type="Int32" Name="Itemid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Itemna" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Directoryid" />
+          <Property Type="String" Name="Isbn" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Languageid" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cnmarc" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cip" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Originalna" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Originallanguageid" />
+          <Property Type="Double" Name="Originalprice" />
+          <Property Type="Int32" Name="Originalcountryid" />
+          <Property Type="String" Name="Press" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Price" />
+          <Property Type="DateTime" Name="Editiontiem" />
+          <Property Type="DateTime" Name="Firsteditiontime" />
+          <Property Type="Int32" Name="Edition" />
+          <Property Type="Int32" Name="Timex" />
+          <Property Type="Int32" Name="Volume" />
+          <Property Type="Int32" Name="Volumesize" />
+          <Property Type="String" Name="Author" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Translator" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Compilingmethodid" />
+          <Property Type="String" Name="Chief" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Wordsnumber" />
+          <Property Type="Int32" Name="Pagenumber" />
+          <Property Type="String" Name="Editorcharge" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Booknumber" />
+          <Property Type="String" Name="Editorcopy" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Deitorplanning" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Deitoracquiring" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PlateDesign" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CoverDesign" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OverallDesign" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Published" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Reader" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Draw" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Typesetting" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Printing" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Createtime" />
+          <Property Type="DateTime" Name="ShelfTime" />
+          <Property Type="Int32" Name="Maxnumber" />
+          <Property Type="Int32" Name="Number" />
+          <Property Type="Int32" Name="Start" />
+          <Property Type="DateTime" Name="Undertime" />
+          <Property Type="String" Name="Coverurl" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Filerul" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Itemkey" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Ebook" />
+          <Property Type="Int32" Name="Itemno" />
+        </EntityType>
+        <EntityType Name="Search">
+          <Key>
+            <PropertyRef Name="Searchid" />
+          </Key>
+          <Property Type="Int32" Name="Searchid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Userid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Searchtxt" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Auditing">
+          <Key>
+            <PropertyRef Name="Auditingid" />
+          </Key>
+          <Property Type="Int32" Name="Auditingid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Itemid" Nullable="false" />
+          <Property Type="Int32" Name="Audiuserid" Nullable="false" />
+          <Property Type="Int32" Name="Start" Nullable="false" />
+          <Property Type="Int32" Name="Levelx" Nullable="false" />
+          <Property Type="DateTime" Name="Createtime" Nullable="false" />
+          <Property Type="DateTime" Name="Auditime" />
+        </EntityType>
+        <EntityType Name="Audiuser">
+          <Key>
+            <PropertyRef Name="Audiuserid" />
+          </Key>
+          <Property Type="Int32" Name="Audiuserid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Audiuserna" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Levelx" Nullable="false" />
+          <Property Type="String" Name="Pwd" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Directory">
+          <Key>
+            <PropertyRef Name="Directoryid" />
+          </Key>
+          <Property Type="Int32" Name="Directoryid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Directoryna" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Parentsid" Nullable="false" />
+          <Property Type="Int32" Name="Levelx" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LatestDevelopments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DevelopmentContent" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Createtor" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TenPayModelStoreContainer" CdmEntityContainer="HXSCEntities">
+    <EntitySetMapping Name="OrderH">
+      <EntityTypeMapping TypeName="IsTypeOf(TenPayModel.OrderH)">
+        <MappingFragment StoreEntitySet="OrderH">
+          <ScalarProperty Name="OrderhId" ColumnName="OrderhId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="Amt" ColumnName="Amt" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Realamt" ColumnName="Realamt" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ReceiveAddress" ColumnName="ReceiveAddress" />
+          <ScalarProperty Name="Express" ColumnName="Express" />
+          <ScalarProperty Name="ExpressNo" ColumnName="ExpressNo" />
+          <ScalarProperty Name="ExpressTime" ColumnName="ExpressTime" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(TenPayModel.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Userna" ColumnName="Userna" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Verification" ColumnName="Verification" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="WorkId" ColumnName="WorkId" />
+          <ScalarProperty Name="WorkDetail" ColumnName="WorkDetail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="Favorites">
+            <EntityTypeMapping TypeName="TenPayModel.Favorites">
+              <MappingFragment StoreEntitySet="Favorites">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="DelTime" ColumnName="DelTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="ItmeId" ColumnName="ItmeId" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="FavoritesId" ColumnName="FavoritesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bill">
+            <EntityTypeMapping TypeName="TenPayModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+                <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+                <ScalarProperty Name="Countryid" ColumnName="Countryid" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Isexpend" ColumnName="Isexpend" />
+                <ScalarProperty Name="Amt" ColumnName="Amt" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Billid" ColumnName="Billid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="TenPayModel.Comments">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Commentstxt" ColumnName="Commentstxt" />
+                <ScalarProperty Name="Parentscommentsid" ColumnName="Parentscommentsid" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Commentsid" ColumnName="Commentsid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoice">
+            <EntityTypeMapping TypeName="TenPayModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Companyaddress" ColumnName="Companyaddress" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Amt" ColumnName="Amt" />
+                <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mail">
+            <EntityTypeMapping TypeName="TenPayModel.Mail">
+              <MappingFragment StoreEntitySet="Mail">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Parentsmailid" ColumnName="Parentsmailid" />
+                <ScalarProperty Name="Levelx" ColumnName="Levelx" />
+                <ScalarProperty Name="Contenttxt" ColumnName="Contenttxt" />
+                <ScalarProperty Name="Classify" ColumnName="Classify" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Mailid" ColumnName="Mailid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UseriMail">
+            <EntityTypeMapping TypeName="TenPayModel.UseriMail">
+              <MappingFragment StoreEntitySet="UseriMail">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Mailid" ColumnName="Mailid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="UseriMailId" ColumnName="UseriMailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderD">
+            <EntityTypeMapping TypeName="TenPayModel.OrderD">
+              <MappingFragment StoreEntitySet="OrderD">
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Realamt" ColumnName="Realamt" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Amt" ColumnName="Amt" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Serial" ColumnName="Serial" />
+                <ScalarProperty Name="Orderhid" ColumnName="Orderhid" />
+                <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReturnedD">
+            <EntityTypeMapping TypeName="TenPayModel.ReturnedD">
+              <MappingFragment StoreEntitySet="ReturnedD">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Amt" ColumnName="Amt" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Serial" ColumnName="Serial" />
+                <ScalarProperty Name="Returnedid" ColumnName="Returnedid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReturnedH">
+            <EntityTypeMapping TypeName="TenPayModel.ReturnedH">
+              <MappingFragment StoreEntitySet="ReturnedH">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Amt" ColumnName="Amt" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Orderid" ColumnName="Orderid" />
+                <ScalarProperty Name="ReturnedId" ColumnName="ReturnedId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shoppingbasket">
+            <EntityTypeMapping TypeName="TenPayModel.Shoppingbasket">
+              <MappingFragment StoreEntitySet="Shoppingbasket">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Shoppingbasketid" ColumnName="Shoppingbasketid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clickrecord">
+            <EntityTypeMapping TypeName="TenPayModel.Clickrecord">
+              <MappingFragment StoreEntitySet="Clickrecord">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Clickrecordid" ColumnName="Clickrecordid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preview">
+            <EntityTypeMapping TypeName="TenPayModel.Preview">
+              <MappingFragment StoreEntitySet="Preview">
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Previewid" ColumnName="Previewid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bookmark">
+            <EntityTypeMapping TypeName="TenPayModel.Bookmark">
+              <MappingFragment StoreEntitySet="Bookmark">
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Bookmarkid" ColumnName="Bookmarkid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="TenPayModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="Provinceid" ColumnName="Provinceid" />
+                <ScalarProperty Name="Cityna" ColumnName="Cityna" />
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="TenPayModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Countryna" ColumnName="Countryna" />
+                <ScalarProperty Name="Countryid" ColumnName="Countryid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Province">
+            <EntityTypeMapping TypeName="TenPayModel.Province">
+              <MappingFragment StoreEntitySet="Province">
+                <ScalarProperty Name="Countryid" ColumnName="Countryid" />
+                <ScalarProperty Name="Provincena" ColumnName="Provincena" />
+                <ScalarProperty Name="Provinceid" ColumnName="Provinceid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Region">
+            <EntityTypeMapping TypeName="TenPayModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="Cityid" ColumnName="Cityid" />
+                <ScalarProperty Name="Regionna" ColumnName="Regionna" />
+                <ScalarProperty Name="Regionid" ColumnName="Regionid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work">
+            <EntityTypeMapping TypeName="TenPayModel.Work">
+              <MappingFragment StoreEntitySet="Work">
+                <ScalarProperty Name="Workna" ColumnName="Workna" />
+                <ScalarProperty Name="Workid" ColumnName="Workid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item">
+            <EntityTypeMapping TypeName="TenPayModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Itemno" ColumnName="Itemno" />
+                <ScalarProperty Name="Ebook" ColumnName="Ebook" />
+                <ScalarProperty Name="Itemkey" ColumnName="Itemkey" />
+                <ScalarProperty Name="Filerul" ColumnName="Filerul" />
+                <ScalarProperty Name="Coverurl" ColumnName="Coverurl" />
+                <ScalarProperty Name="Undertime" ColumnName="Undertime" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Maxnumber" ColumnName="Maxnumber" />
+                <ScalarProperty Name="ShelfTime" ColumnName="ShelfTime" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Printing" ColumnName="Printing" />
+                <ScalarProperty Name="Typesetting" ColumnName="Typesetting" />
+                <ScalarProperty Name="Draw" ColumnName="Draw" />
+                <ScalarProperty Name="Reader" ColumnName="Reader" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="OverallDesign" ColumnName="OverallDesign" />
+                <ScalarProperty Name="CoverDesign" ColumnName="CoverDesign" />
+                <ScalarProperty Name="PlateDesign" ColumnName="PlateDesign" />
+                <ScalarProperty Name="Deitoracquiring" ColumnName="Deitoracquiring" />
+                <ScalarProperty Name="Deitorplanning" ColumnName="Deitorplanning" />
+                <ScalarProperty Name="Editorcopy" ColumnName="Editorcopy" />
+                <ScalarProperty Name="Booknumber" ColumnName="Booknumber" />
+                <ScalarProperty Name="Editorcharge" ColumnName="Editorcharge" />
+                <ScalarProperty Name="Pagenumber" ColumnName="Pagenumber" />
+                <ScalarProperty Name="Wordsnumber" ColumnName="Wordsnumber" />
+                <ScalarProperty Name="Chief" ColumnName="Chief" />
+                <ScalarProperty Name="Compilingmethodid" ColumnName="Compilingmethodid" />
+                <ScalarProperty Name="Translator" ColumnName="Translator" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Volumesize" ColumnName="Volumesize" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Timex" ColumnName="Timex" />
+                <ScalarProperty Name="Edition" ColumnName="Edition" />
+                <ScalarProperty Name="Firsteditiontime" ColumnName="Firsteditiontime" />
+                <ScalarProperty Name="Editiontiem" ColumnName="Editiontiem" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Press" ColumnName="Press" />
+                <ScalarProperty Name="Originalcountryid" ColumnName="Originalcountryid" />
+                <ScalarProperty Name="Originalprice" ColumnName="Originalprice" />
+                <ScalarProperty Name="Originallanguageid" ColumnName="Originallanguageid" />
+                <ScalarProperty Name="Originalna" ColumnName="Originalna" />
+                <ScalarProperty Name="Cip" ColumnName="Cip" />
+                <ScalarProperty Name="Cnmarc" ColumnName="Cnmarc" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Languageid" ColumnName="Languageid" />
+                <ScalarProperty Name="Isbn" ColumnName="Isbn" />
+                <ScalarProperty Name="Directoryid" ColumnName="Directoryid" />
+                <ScalarProperty Name="Itemna" ColumnName="Itemna" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Search">
+            <EntityTypeMapping TypeName="TenPayModel.Search">
+              <MappingFragment StoreEntitySet="Search">
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Searchtxt" ColumnName="Searchtxt" />
+                <ScalarProperty Name="Userid" ColumnName="Userid" />
+                <ScalarProperty Name="Searchid" ColumnName="Searchid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Auditing">
+            <EntityTypeMapping TypeName="TenPayModel.Auditing">
+              <MappingFragment StoreEntitySet="Auditing">
+                <ScalarProperty Name="Auditime" ColumnName="Auditime" />
+                <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+                <ScalarProperty Name="Levelx" ColumnName="Levelx" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Audiuserid" ColumnName="Audiuserid" />
+                <ScalarProperty Name="Itemid" ColumnName="Itemid" />
+                <ScalarProperty Name="Auditingid" ColumnName="Auditingid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Audiuser">
+            <EntityTypeMapping TypeName="TenPayModel.Audiuser">
+              <MappingFragment StoreEntitySet="Audiuser">
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="Levelx" ColumnName="Levelx" />
+                <ScalarProperty Name="Audiuserna" ColumnName="Audiuserna" />
+                <ScalarProperty Name="Audiuserid" ColumnName="Audiuserid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Directory">
+            <EntityTypeMapping TypeName="TenPayModel.Directory">
+              <MappingFragment StoreEntitySet="Directory">
+                <ScalarProperty Name="Levelx" ColumnName="Levelx" />
+                <ScalarProperty Name="Parentsid" ColumnName="Parentsid" />
+                <ScalarProperty Name="Directoryna" ColumnName="Directoryna" />
+                <ScalarProperty Name="Directoryid" ColumnName="Directoryid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LatestDevelopments">
+            <EntityTypeMapping TypeName="TenPayModel.LatestDevelopments">
+              <MappingFragment StoreEntitySet="LatestDevelopments">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Createtor" ColumnName="Createtor" />
+                <ScalarProperty Name="DevelopmentContent" ColumnName="DevelopmentContent" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="HXSCEFModel" ZoomLevel="147">
+        <EntityTypeShape EntityType="TenPayModel.OrderH" Width="1.5" PointX="8.625" PointY="1.125" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.UserInfo" Width="1.5" PointX="0.75" PointY="4.75" Height="4.6443082682291674" />
+        <EntityTypeShape EntityType="TenPayModel.Favorites" Width="1.5" PointX="3.375" PointY="9.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="TenPayModel.Bill" Width="1.5" PointX="3.375" PointY="5.75" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="TenPayModel.Comments" Width="1.5" PointX="0.75" PointY="9.75" Height="2.2966927083333317" />
+        <EntityTypeShape EntityType="TenPayModel.Invoice" Width="1.5" PointX="10.625" PointY="1.75" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Mail" Width="1.5" PointX="10.375" PointY="5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.UseriMail" Width="1.5" PointX="8" PointY="7.625" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.OrderD" Width="1.5" PointX="0.75" PointY="0.75" Height="3.1161507161458317" />
+        <EntityTypeShape EntityType="TenPayModel.ReturnedD" Width="1.5" PointX="10.625" PointY="2.375" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.ReturnedH" Width="1.5" PointX="10.5" PointY="3.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Shoppingbasket" Width="1.5" PointX="8" PointY="7.125" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Clickrecord" Width="1.5" PointX="10.375" PointY="12.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="TenPayModel.Preview" Width="1.5" PointX="12.375" PointY="11.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="TenPayModel.Bookmark" Width="1.5" PointX="0.75" PointY="13.75" Height="2.1610522460937602" />
+        <EntityTypeShape EntityType="TenPayModel.City" Width="1.5" PointX="3.375" PointY="12.75" Height="1.4535937500000031" />
+        <EntityTypeShape EntityType="TenPayModel.Country" Width="1.5" PointX="5.375" PointY="12.75" Height="1.4535937500000031" />
+        <EntityTypeShape EntityType="TenPayModel.Province" Width="1.5" PointX="7.375" PointY="12.75" Height="1.4535937500000031" />
+        <EntityTypeShape EntityType="TenPayModel.Region" Width="1.5" PointX="10.625" PointY="2.875" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Work" Width="1.5" PointX="10.5" PointY="4" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Item" Width="1.5" PointX="10.5" PointY="1.125" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Search" Width="1.5" PointX="10.5" PointY="4.5" Height="0.4" IsExpanded="false" />
+        <EntityTypeShape EntityType="TenPayModel.Auditing" Width="1.5" PointX="3.375" PointY="0.75" Height="2.1280729166666674" />
+        <EntityTypeShape EntityType="TenPayModel.Audiuser" Width="1.5" PointX="5.375" PointY="0.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="TenPayModel.Directory" Width="1.5" PointX="5.375" PointY="3.75" Height="1.6222135416666674" />
+        <EntityTypeShape EntityType="TenPayModel.LatestDevelopments" Width="1.5" PointX="7.375" PointY="2.75" Height="1.7908333333333246" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
