@@ -1,0 +1,61 @@
+/*
+ *  simple gallery with jQuery
+ *	made by owenhong 2013-08-08
+ *	作者：小欧(laohonghzy@qq.com) 2013-08-08
+ *  http://www.520ued.com
+ */
+@charset "utf-8";
+#slider {width:970px;height:400px;margin:0 auto;overflow:hidden;position:relative;}
+#slider #scroll_wrapper{position:relative;}
+#slider .child {left:970px;position:absolute;z-index:10;}
+#slider-img{width:970px;height:30px;text-align:center;margin:0 auto;filter:alpha(opacity=60);-moz-opacity:0.6; -khtml-opacity: 0.6; opacity: 0.6;position:absolute;z-index:9;bottom:0;}
+#slider-img a{height:11px;width:11px;display:inline-block;background:url(../images/triggers.png) no-repeat;margin-left:15px;margin-top: 10px;}
+#slider-img a.cur{background:url(../images/triggers_cur.png) no-repeat;}
+#btn_prev,#btn_next{width:50px;height:45px;z-index: 99;position:absolute;top: 33%;cursor:pointer;background:url(../images/prev.png);}
+#btn_next{right:0;background:url(../images/next.png);}
+
+/*畅销榜开始*/
+.title_con{ padding:0; margin:0;}
+.title_mod{ width:200px; overflow:hidden;}
+.title_wrap ul{ padding:0; margin:0;}
+.title_wrap{position:relative;z-index:0;height:34px;line-height:34px;border-bottom:1px solid #e8e9eb; width:100%; }
+
+.tab_title{zoom:1}
+		.tab_title li{display:inline-block;position:relative;z-index:1;float:left;height:32px;line-height:32px;margin-bottom:-1px;border-top:3px solid #fff;font-size:14px;text-align:center;zoom:1;  width:64px;}
+		.tab_title li a{display:inline-block;padding:0 9px;color:#797979;text-decoration:none;}
+		.tab_title li a:hover{text-decoration:none}
+		.tab_title .on{border-top:3px solid #1577b9;background-color:#fff;}
+		.tab_title .on a{border-left:1px solid #e8e9eb;border-right:1px solid #e8e9eb;color:#333;}
+
+/* pic_title_mod */		
+dd, dt{ padding:0; margin:0;}
+.nodisplay{display:none}
+.side_tit{position:relative;z-index:10;height:30px;margin-left:-18px;padding-left:18px;font:18px/30px "microsoft yahei";zoom:1}
+	.side_tit_0{color:#1577b9;}
+
+	.side_tit_0 a{color:#1577b9}
+	.hover_list{ width:200px; overflow:hidden;padding:0; margin:0; background-color:#fff;}
+	.hover_list a{ text-decoration:none; color:#000;}
+	.hover_list ul{ padding:0; margin:0;}
+.hover_list li{height:32px;line-height:32px;overflow:hidden;border-bottom:1px dotted #ccc}
+.hover_list .on{height:100px;padding:0}
+.hover_list .on .art_mod_2{display:block;}
+/* pic_title_mod */
+.pic_title_mod{position:relative;zoom:1; padding:0px 8px; overflow:hidden; }
+.pic_title_mod span{display:inline-block;position:absolute;left:0;bottom:0;height:30px;padding:0 5%;overflow:hidden;zoom:1}
+.pic_title_mod .title_bg{background-color:#000;opacity:.5;filter:alpha(opacity=50)}
+.pic_title_mod span a{font:14px/30px "simsun";color:#fff}
+
+.icon_orang,.block{ line-height:12px;color:#fff; padding:2px 4px;text-decoration: none;  text-decoration:none;}
+.block{ background-color:#7f7f7f;} .icon_orang{background-color:#f49402;}
+a{ text-decoration:none;}
+
+.art_mod_2{ margin:15px 8px;line-height:12px;}
+.art_mod_2 dt{ font-size:14px; font-weight:bold;} .art_mod_2 dt a{ color:#000; line-height:18px;}
+.normal_con{font-size:12px; color:#999;line-height:18px;}
+.link_block{ color:#c30;font-size:12px;line-height:18px;}
+.display{ display:inline-block;}
+.fleft{ float:left;}
+.p10{ padding-top:10px;} .clearfix{ clear:both;} .p{ margin-right:10px;} .m8{ margin-top:8px;}
+
+/*畅销榜结束*/
