@@ -26,23 +26,23 @@
                     <div class="w320 fleft ">
                         <input type="text" id="txt_username" name="" value="" class="regbtn1">
                     </div>
-                    <div class="w320 fleft  pull-left p10 color-hui" id="tips_username">是否注册过</div>
+                    <div class="w320 fleft  pull-left p10 color-hui" style="color: red" id="tips_username"></div>
                     <div class="cbr"></div>
                 </div>
                 <div class="regline line35">
                     <div class="w80 m235 pull-right fleft mp10">登录密码</div>
                     <div class="w320  fleft">
-                        <input type="text" id="txt_pwd" name="" value="" class="regbtn1">
+                        <input type="password" id="txt_pwd" name="" value="" class="regbtn1">
                     </div>
-                    <div class="w320 fleft  pull-left p10 color-hui" id="tips_pwd">是否正确</div>
+                    <div class="w320 fleft  pull-left p10 color-hui" style="color: red" id="tips_pwd"></div>
                     <div class="cbr"></div>
                 </div>
                 <div class="regline line35">
                     <div class="w80 m235 pull-right fleft mp10">确认密码</div>
                     <div class="w320  fleft">
-                        <input type="text" id="txt_pwdconfirm" name="" value="" class="regbtn1">
+                        <input type="password" id="txt_pwdconfirm" name="" value="" class="regbtn1">
                     </div>
-                    <div class="w320 fleft  pull-left p10 color-hui" id="tips_pwdconfirm">是否正确</div>
+                    <div class="w320 fleft  pull-left p10 color-hui" style="color: red" id="tips_pwdconfirm"></div>
                     <div class="cbr"></div>
                 </div>
                 <div class="regline line">
@@ -56,7 +56,7 @@
                 <div class="regline line35">
                     <div class="w80 m235 pull-right fleft mp10">&nbsp;</div>
                     <div class="w320  fleft">
-                        <input type="button" name="" value="立即注册" class="regbtn2">
+                        <input type="button" id="btn_submit" name="" value="立即注册" class="regbtn2">
                     </div>
                     <div class="cbr"></div>
                 </div>
@@ -72,28 +72,63 @@
 </body>
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/jquery.md5.js"></script>
-    <script src="js/util.js"></script>
+<script src="js/util.js"></script>
 <script>
     $(function () {
         var txt = {
             username: $("#txt_username"),
             pwd: $("#txt_pwd"),
-            pwdconfirm:$("#txt_pwdcomfirm")
+            pwdconfirm: $("#txt_pwdconfirm")
         };
         var tips = {
             username: $("#tips_username"),
             pwd: $("#tips_pwd"),
-            pwdconfirm: $("#tips_pwdcomfirm")
+            pwdconfirm: $("#tips_pwdconfirm")
         };
+        var btn = { submit: $("#btn_submit") };
 
-        var callback = function (response) {
-            alert("成功")
-        };
-        var pwd = $.md5("123");
-        var param = 'userna=sf1&pwd=' + pwd;
-        //ajaxsend(1001, param, callback);
+
+
+        //
+        txt.pwdconfirm.blur(function () {
+            if (txt.pwd.val() != txt.pwdconfirm.val()) {
+                tips.pwdconfirm.html("密码不一致！");
+                return;
+            }
+            tips.pwdconfirm.html("");
+        });
+        txt.pwd.blur(function () {
+            if (txt.pwdconfirm.val() != "") {
+                if (txt.pwd.val() != txt.pwdconfirm.val()) {
+                    tips.pwdconfirm.html("密码不一致！");
+                    return;
+                }
+            }
+            tips.pwdconfirm.html("");
+        });
+        txt.username.blur(function () {
+            var callback = function (response) {
+                if (response.ErrorCode == 0) {
+                    tips.username.html("可用");
+                    return;
+                }
+                tips.username.html(response.ErrorMsg);
+            };
+            var param = "userna=" + txt.username.val();
+            ajaxsend(1002, param, callback);
+
+        });
+        btn.submit.click(function () {
+            var callback = function (response) {
+                alert("成功");
+            };
+            var pwd = $.md5(txt.pwd.val());
+            var param = 'userna=' + txt.username.val() + '&pwd=' + pwd;
+            //发送ajax
+            ajaxsend(1001, param, callback);
+        });
         //var mac = $.md5('actionid=1001&userna=sf1&pwd=' + pwd + '&key=3321pc3321pc');
-        
+
         //$.ajax(
         //{
         //    url: "Service.aspx",//调用GetData方法
@@ -108,7 +143,7 @@
         //        alert("err");
         //    }
         //});
-       
+
     });
 </script>
 

@@ -139,6 +139,12 @@
     <Content Include="Images\licon3.jpg" />
     <Content Include="Images\licon4.jpg" />
     <Content Include="Images\llogo.jpg" />
+    <Content Include="Images\login\ad1.jpg" />
+    <Content Include="Images\login\ad2.jpg" />
+    <Content Include="Images\login\ad3.jpg" />
+    <Content Include="Images\login\ad4.jpg" />
+    <Content Include="Images\login\login.jpg" />
+    <Content Include="Images\login\password.jpg" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\month\icon_block.jpg" />
     <Content Include="Images\month\icon_orange.jpg" />
