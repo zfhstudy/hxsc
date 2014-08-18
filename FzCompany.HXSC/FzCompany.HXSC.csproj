@@ -246,6 +246,7 @@
     <Content Include="Prototype\js\play.js" />
     <Content Include="Prototype\js\slider.js" />
     <Content Include="Prototype\js\util.js" />
+    <Content Include="Prototype\问题汇总.txt" />
     <Content Include="Prototype\login.html" />
     <Content Include="Prototype\manageBook.html" />
     <Content Include="Prototype\myBalance.html" />
