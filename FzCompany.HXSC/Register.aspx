@@ -107,6 +107,15 @@
             tips.pwdconfirm.html("");
         });
         txt.username.blur(function () {
+            if (txt.username.val() == "") {
+                tips.username.html("用户名不能为空！");
+                return;
+            }
+            if (!checkemail(txt.username.val()) && !checkmobile(txt.username.val())) {
+                tips.username.html("用户名格式不对！");
+                return;
+            }
+            tips.username.html("");
             var callback = function (response) {
                 if (response.ErrorCode == 0) {
                     tips.username.html("可用");
@@ -119,6 +128,20 @@
 
         });
         btn.submit.click(function () {
+            if (txt.username.val() == "") {
+                tips.username.html("用户名不能为空！");
+                txt.username.focus();
+                return;
+            }
+            if (txt.pwd.val() == "") {
+                tips.pwd.html("密码不能为空！");
+                txt.pwd.focus();
+                return;
+            }
+            if (txt.pwd.val() != txt.pwdconfirm.val()) {
+                tips.pwdconfirm.html("密码不一致！");
+                return;
+            }
             var callback = function (response) {
                 alert("成功");
             };
@@ -127,22 +150,7 @@
             //发送ajax
             ajaxsend(1001, param, callback);
         });
-        //var mac = $.md5('actionid=1001&userna=sf1&pwd=' + pwd + '&key=3321pc3321pc');
-
-        //$.ajax(
-        //{
-        //    url: "Service.aspx",//调用GetData方法
-        //    type: "post",
-        //    dataType: "json",
-        //    contentType: "application/json",
-        //    data: 'actionid=1001&userna=sf1236&pwd=' + pwd + '&key=3321pc&mac=' + mac,//传递参数值（参数名叫value)
-        //    success: function (data) {
-        //        console.log(data);
-        //    },
-        //    error: function (request, message, e) {
-        //        alert("err");
-        //    }
-        //});
+       
 
     });
 </script>
