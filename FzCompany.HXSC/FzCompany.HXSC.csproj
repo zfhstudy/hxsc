@@ -213,11 +213,39 @@
     <Content Include="Prototype\buy.html" />
     <Content Include="Prototype\classificationBook.html" />
     <Content Include="Prototype\clientIndex.html" />
+    <Content Include="Prototype\css\css.css" />
+    <Content Include="Prototype\css\slider.css" />
     <Content Include="Prototype\deliveryAddress.html" />
     <Content Include="Prototype\examineBook.html" />
     <Content Include="Prototype\explainBook.html" />
+    <Content Include="Prototype\images\ad.jpg" />
+    <Content Include="Prototype\images\ad1.jpg" />
+    <Content Include="Prototype\images\ad10.jpg" />
+    <Content Include="Prototype\images\ad11.jpg" />
+    <Content Include="Prototype\images\ad12.jpg" />
+    <Content Include="Prototype\images\ad2.jpg" />
+    <Content Include="Prototype\images\ad3.jpg" />
+    <Content Include="Prototype\images\ad4.jpg" />
+    <Content Include="Prototype\images\ad6.jpg" />
+    <Content Include="Prototype\images\ad7.jpg" />
+    <Content Include="Prototype\images\ad8.jpg" />
+    <Content Include="Prototype\images\ad9.jpg" />
+    <Content Include="Prototype\images\adserver\ad1.jpg" />
+    <Content Include="Prototype\images\adserver\ad2.jpg" />
+    <Content Include="Prototype\images\adserver\ad3.jpg" />
+    <Content Include="Prototype\images\adserver\ad4.jpg" />
+    <Content Include="Prototype\images\adserver\ad5.jpg" />
     <Content Include="Prototype\index.html" />
     <Content Include="Prototype\invoice.html" />
+    <Content Include="Prototype\js\index.js" />
+    <Content Include="Prototype\js\index.min.js" />
+    <Content Include="Prototype\js\jquery-1.7.2.min.js" />
+    <Content Include="Prototype\js\jquery.md5.js" />
+    <Content Include="Prototype\js\pislider.min.js" />
+    <Content Include="Prototype\js\play - 副本.js" />
+    <Content Include="Prototype\js\play.js" />
+    <Content Include="Prototype\js\slider.js" />
+    <Content Include="Prototype\js\util.js" />
     <Content Include="Prototype\login.html" />
     <Content Include="Prototype\manageBook.html" />
     <Content Include="Prototype\myBalance.html" />
@@ -583,6 +611,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ajax\Login.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Prototype\images\login\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
