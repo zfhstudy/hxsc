@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzCompany.Core", "FzCompany.Core\FzCompany.Core.csproj", "{133912A5-AFC5-4230-8BCA-6EA2039641DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzCompany.HXSC", "FzCompany.HXSC\FzCompany.HXSC.csproj", "{2ABBAAF8-A277-4B4D-844E-A6035090EC3F}"
@@ -10,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzCompany.HXSC.BLL", "FzCompany.HXSC.BLL\FzCompany.HXSC.BLL.csproj", "{FC280A34-68A9-4B77-BBA5-98EBF9184E86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzCompany.HXSC.EfModel", "FzCompany.HXSC.EfModel\FzCompany.HXSC.EfModel.csproj", "{80FB74B1-5E2F-4F9B-9472-1E127D556B6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FzCompany.HXSC.Prototype", "FzCompany.HXSC.Prototype\FzCompany.HXSC.Prototype.csproj", "{B21BC0E9-76D6-4651-B01C-D46E80F9EA3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +33,10 @@ Global
 		{80FB74B1-5E2F-4F9B-9472-1E127D556B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80FB74B1-5E2F-4F9B-9472-1E127D556B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80FB74B1-5E2F-4F9B-9472-1E127D556B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21BC0E9-76D6-4651-B01C-D46E80F9EA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21BC0E9-76D6-4651-B01C-D46E80F9EA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21BC0E9-76D6-4651-B01C-D46E80F9EA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21BC0E9-76D6-4651-B01C-D46E80F9EA3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
