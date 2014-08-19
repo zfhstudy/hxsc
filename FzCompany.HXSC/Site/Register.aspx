@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="FzCompany.HXSC.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="FzCompany.HXSC.Site.Register" %>
 
 <!DOCTYPE html>
 
@@ -48,7 +48,7 @@
                 <div class="regline line">
                     <div class="w80 m235 pull-right fleft mp10">&nbsp;</div>
                     <div class="w320  fleft">
-                        <input type="checkbox" value="" name="" checked>
+                        <input type="checkbox" id="chk_item" value="" name="" checked>
                         我已经阅读并同意《。。。。条款》
                     </div>
                     <div class="cbr"></div>
@@ -142,15 +142,19 @@
                 tips.pwdconfirm.html("密码不一致！");
                 return;
             }
+            if (!$("#chk_item").prop("checked")) {
+                alert("如要注册请同意条款！")
+                return;
+            }
             var callback = function (response) {
-                alert("成功");
+                location.href = "RegSuccess.aspx";
             };
             var pwd = $.md5(txt.pwd.val());
             var param = 'userna=' + txt.username.val() + '&pwd=' + pwd;
             //发送ajax
             ajaxsend(1001, param, callback);
         });
-       
+
 
     });
 </script>

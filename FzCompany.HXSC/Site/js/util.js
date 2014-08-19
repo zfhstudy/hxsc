@@ -4,7 +4,7 @@
     var mac = $.md5(parstr + key);
     $.ajax(
        {
-           url: "Service.aspx",
+           url: "../Service.aspx",
            type: "post",
            dataType: "json",
            contentType: "application/json",
@@ -15,3 +15,11 @@
            }
        });
 }
+var checkemail = function (email) {
+    var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    return reg.test(email);
+};
+var checkmobile = function (mobile) {
+    var reg = /^[1][3,5,7,8]\d{9}$/;
+    return reg.test(mobile);
+};

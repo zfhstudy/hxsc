@@ -98,7 +98,6 @@
     <Content Include="password.aspx" />
     <Content Include="pay.aspx" />
     <Content Include="recharge.aspx" />
-    <Content Include="Register.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="returnGoods.aspx" />
     <Content Include="saveCenter.aspx" />
@@ -107,6 +106,7 @@
     <Content Include="Service.aspx" />
     <Content Include="setpassword.aspx" />
     <Content Include="shoppingCar.aspx" />
+    <Content Include="Site\Archives.aspx" />
     <Content Include="Site\archives.html" />
     <Content Include="Site\buy.html" />
     <Content Include="Site\classificationBook.html" />
@@ -197,6 +197,7 @@
     <Content Include="Site\images\zc2icon.jpg" />
     <Content Include="Site\index.html" />
     <Content Include="Site\invoice.html" />
+    <Content Include="Site\js\citys.js" />
     <Content Include="Site\js\index.js" />
     <Content Include="Site\js\index.min.js" />
     <Content Include="Site\js\jquery-1.7.2.min.js" />
@@ -206,6 +207,7 @@
     <Content Include="Site\js\play.js" />
     <Content Include="Site\js\slider.js" />
     <Content Include="Site\js\util.js" />
+    <Content Include="Site\Login.aspx" />
     <Content Include="Site\login.html" />
     <Content Include="Site\manageBook.html" />
     <Content Include="Site\myBalance.html" />
@@ -218,7 +220,9 @@
     <Content Include="Site\password.html" />
     <Content Include="Site\pay.html" />
     <Content Include="Site\recharge.html" />
+    <Content Include="Site\Register.aspx" />
     <Content Include="Site\Registration.html" />
+    <Content Include="Site\RegSuccess.aspx" />
     <Content Include="Site\returnGoods.html" />
     <Content Include="Site\saveCenter.html" />
     <Content Include="Site\search.html" />
@@ -424,13 +428,6 @@
     <Compile Include="recharge.aspx.designer.cs">
       <DependentUpon>recharge.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -486,6 +483,34 @@
     </Compile>
     <Compile Include="shoppingCar.aspx.designer.cs">
       <DependentUpon>shoppingCar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Archives.aspx.cs">
+      <DependentUpon>Archives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Archives.aspx.designer.cs">
+      <DependentUpon>Archives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\RegSuccess.aspx.cs">
+      <DependentUpon>RegSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\RegSuccess.aspx.designer.cs">
+      <DependentUpon>RegSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="square.aspx.cs">
       <DependentUpon>square.aspx</DependentUpon>

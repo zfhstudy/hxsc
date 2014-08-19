@@ -7,9 +7,9 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace FzCompany.HXSC {
+namespace FzCompany.HXSC.Site {
     
     
-    public partial class Register {
+    public partial class Login {
     }
 }
