@@ -158,9 +158,9 @@
             <div class="w700">
                 <div class="w80 pull-right fleft  p10 m8">性别：</div>
                 <div class="fleft heightarch">
-                    <input type="radio" name="sex" value="0">
+                    <input type="radio" name="sex" value="男">
                     男
-                    <input type="radio" name="sex" value="1">
+                    <input type="radio" name="sex" value="女">
                     女
                 </div>
 
@@ -187,7 +187,7 @@
         <div class="w700" id="div_other" style="display: none">
             <div class="wid320 pull-right fleft  p10">&nbsp;</div>
             <div class=" fleft">
-                <input type="text" name="" value="" class="regbtn1 w320">
+                <input type="text" id="txt_other" name="" value="" class="regbtn1 w320">
             </div>
             <%--<div class="  fleft  p10 color-hui">其他</div>--%>
             <div class="cbr"></div>
@@ -196,7 +196,8 @@
         <div class="w700">
             <div class="wid320 pull-right fleft  p10 m8">生日：</div>
             <div class="fleft">
-            <input type="text" id="txt_birthday" class=" Wdate" readonly="readonly"/></div>
+                <input type="text" id="txt_birthday" class=" Wdate" readonly="readonly" />
+            </div>
             <%--<div class="fleft">
                 <select class="regbtn5  m8 ">
                     <option>2015</option>
@@ -240,7 +241,7 @@
     </script>
     <script type="text/javascript" src="js/play.js"></script>
     <script type="text/javascript" src="js/citys.js"></script>
-     <script type="text/javascript" src="js/jquery.md5.js"></script>
+    <script type="text/javascript" src="js/jquery.md5.js"></script>
     <script type="text/javascript" src="js/util.js"></script>
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript">
@@ -257,7 +258,7 @@
             if (n == "") return;
 
             var a = eval("city" + n); //得到城市的数组名 
-            for (var i = 0; i < a.length; i++) e.options.add(new Option(a[i], a[i]));
+            for (var i = 0; i < a.length; i++) e.options.add(new Option(a[i], i+1));
         }
 
         $("#province").change(function () {
@@ -274,16 +275,17 @@
 
         });
         $(function () {
-            $("#txt_birthday").click(function() { WdatePicker(); });
+            $("#txt_birthday").click(function () { WdatePicker(); });
         });
-        var txt= {
+        var txt = {
             nickname: $("#txt_nickname"),
             province: $("#province"),
             city: $("#city"),
-            birthday:$("#birthday")
+            birthday: $("#txt_birthday"),
+            workdetail: $("#txt_other")
         }
-        var btn= {
-            save:$("#btn_save")
+        var btn = {
+            save: $("#btn_save")
         }
 
         var callback = function (response) {
@@ -301,10 +303,28 @@
         ajaxsend(1006, param, callback);
 
         btn.save.click(function () {
-
-            var param = 'username=' + txt.nickname.val() + '&birthday=' + txt.birthday.val();
+            var par =
+            {
+                User_Id: '4c707c4687574be2b235813c78537128',
+                username: txt.nickname.val(),
+                birthday: txt.birthday.val(),
+                start: 0,
+                balance: 0,
+                imageurl: "",
+                sex: $("input[name='sex']:checked").val(),
+                countryid: 0,
+                provinceid: txt.province.val(),
+                cityid: txt.city.val(),
+                street: "",
+                regionid: 0,
+                workid: $("input[name='identity']:checked").val(),
+                workdetail: txt.workdetail.val(),
+                phone: ""
+            }
+            //var param = 'User_Id=4c707c4687574be2b235813c78537128' + '&username=' + txt.nickname.val() + '&birthday=' + txt.birthday.val() + '&imageurl';
+            var param1 = toQueryString(par);
             //发送ajax
-            ajaxsend(1007, param, function(response) {
+            ajaxsend(1007, param1, function (response) {
                 if (response.ErrorCode == 0) {
                     alert("保存成功");
                 } else {
@@ -312,7 +332,7 @@
                 }
             });
         });
-      
+
     </script>
 </body>
 </html>
