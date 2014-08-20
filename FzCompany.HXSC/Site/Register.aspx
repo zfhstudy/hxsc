@@ -143,11 +143,15 @@
                 return;
             }
             if (!$("#chk_item").prop("checked")) {
-                alert("如要注册请同意条款！")
+                alert("如要注册请同意条款！");
                 return;
             }
             var callback = function (response) {
-                location.href = "RegSuccess.aspx";
+                if (response.ErrorCode == 0) {
+                    location.href = "RegSuccess.aspx";
+                } else {
+                    alert(response.ErrorMsg);
+                }
             };
             var pwd = $.md5(txt.pwd.val());
             var param = 'userna=' + txt.username.val() + '&pwd=' + pwd;

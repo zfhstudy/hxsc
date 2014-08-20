@@ -8,6 +8,7 @@
     <link href="css/css.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/slider.css" />
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -69,7 +70,7 @@
                     <ul class="text">
                         <li><a href="saveCenter.html" target="erp_frame" title="安全中心">安全中心</a></li>
                         <li><a href="deliveryAddress.html" target="erp_frame" title="收货地址">收货地址</a></li>
-                        <li class="line"><a href="archives.html" target="erp_frame" title="个人档案" class="on">个人档案</a></li>
+                        <li class="line"><a href="Archives.aspx" target="erp_frame" title="个人档案" class="on">个人档案</a></li>
                     </ul>
                 </dl>
                 <dl>
@@ -157,9 +158,9 @@
             <div class="w700">
                 <div class="w80 pull-right fleft  p10 m8">性别：</div>
                 <div class="fleft heightarch">
-                    <input type="radio" name="sex">
+                    <input type="radio" name="sex" value="0">
                     男
-                    <input type="radio" name="sex">
+                    <input type="radio" name="sex" value="1">
                     女
                 </div>
 
@@ -171,12 +172,12 @@
             <div class="w700">
                 <div class="w80 pull-right fleft  p10 m8">身份：</div>
                 <div class=" fleft heightarch">
-                    <input type="radio" checked  name="identity" value="老师">
+                    <input type="radio" name="identity" value="0">
                     老师
-                    <input type="radio" name="identity" value="学生">
-                    学生<input type="radio" name="identity" value="上班族">
-                    上班族<input type="radio" name="identity" value="自由职业者">
-                    自由职业者<input type="radio" name="identity" value="" id="r_other">其它
+                    <input type="radio" name="identity" value="1">
+                    学生<input type="radio" name="identity" value="2">
+                    上班族<input type="radio" name="identity" value="3">
+                    自由职业者<input type="radio" name="identity" value="" id="4">其它
                 </div>
                 <div class="cbr"></div>
             </div>
@@ -195,6 +196,8 @@
         <div class="w700">
             <div class="wid320 pull-right fleft  p10 m8">生日：</div>
             <div class="fleft">
+            <input type="text" id="txt_birthday" class=" Wdate" readonly="readonly"/></div>
+            <%--<div class="fleft">
                 <select class="regbtn5  m8 ">
                     <option>2015</option>
                     <option>2014</option>
@@ -208,8 +211,8 @@
          <select class="regbtn5  m8">
              <option>1</option>
              <option>2</option>
-         </select>日
-            </div>
+         </select>日 
+            </div>--%>
             <div class="cbr"></div>
         </div>
 
@@ -217,14 +220,14 @@
         <div class="w700">
             <div class="wid320 pull-right fleft p10 m8"></div>
             <div class="w300 fleft m8">
-                <input type="button" class=" regbtn4" value="保 存">
+                <input type="button" class=" regbtn4" id="btn_save" value="保 存">
             </div>
             <div class="cbr"></div>
         </div>
 
     </div>
     <div class="cor-line-bottom cbr mt10"></div>
-    </div>
+
     <div class="cbr mh10 "></div>
 
     <!--尾部-->
@@ -237,6 +240,9 @@
     </script>
     <script type="text/javascript" src="js/play.js"></script>
     <script type="text/javascript" src="js/citys.js"></script>
+     <script type="text/javascript" src="js/jquery.md5.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript">
         function province() {
             var e = document.getElementById('province');
@@ -253,9 +259,10 @@
             var a = eval("city" + n); //得到城市的数组名 
             for (var i = 0; i < a.length; i++) e.options.add(new Option(a[i], a[i]));
         }
+
         $("#province").change(function () {
             cityName($("#province").val());
-        })
+        });
         province(); //初始时给省名下拉菜单赋内容  
         $("input[name='identity']").click(function () {
             if ($("input[name='identity']:checked").val() == "") {
@@ -266,7 +273,46 @@
             }
 
         });
+        $(function () {
+            $("#txt_birthday").click(function() { WdatePicker(); });
+        });
+        var txt= {
+            nickname: $("#txt_nickname"),
+            province: $("#province"),
+            city: $("#city"),
+            birthday:$("#birthday")
+        }
+        var btn= {
+            save:$("#btn_save")
+        }
 
+        var callback = function (response) {
+            if (response.ErrorCode == 0) {
+                var data = response.PackData;
+                alert("成功");
+                txt.nickname.val(data.username);
+                txt.province.val(data.provinceid);
+                txt.city.val(data.cityid);
+                $("input[name='sex']").eq(data.sex).attr("checked", true);
+                $("input[name='identity']").eq(data.workid).attr("checked", true);
+            }
+        };
+        var param = "User_Id=4c707c4687574be2b235813c78537128";
+        ajaxsend(1006, param, callback);
+
+        btn.save.click(function () {
+
+            var param = 'username=' + txt.nickname.val() + '&birthday=' + txt.birthday.val();
+            //发送ajax
+            ajaxsend(1007, param, function(response) {
+                if (response.ErrorCode == 0) {
+                    alert("保存成功");
+                } else {
+                    alert(response.ErrorMsg);
+                }
+            });
+        });
+      
     </script>
 </body>
 </html>
