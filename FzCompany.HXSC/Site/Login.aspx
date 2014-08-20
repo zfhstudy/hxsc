@@ -41,7 +41,7 @@
         </div>
         <div class="fleft w500 padding-35" >
         	<div class="loginline"><input type="text" id="txt_username" value="" class="logintxt" ></div>
-         	<div class="loginline"><input type="text" id="txt_pwd" value="" class="loginpaw" ></div>
+         	<div class="loginline"><input type="password" id="txt_pwd" value="" class="loginpaw" ></div>
             
             <div class="loginlineno"><input type="checkbox" id="chk_autologin" checked> 七天内自动登录 <span class="pull-textright "><a href="password.html" class="orange">忘记密码</a></span></div>
            <div class="loginlineno"><input type="button" id="btn_login" value="登 录" class="regbtn2"></div>
@@ -85,6 +85,9 @@
         $("#bannerlogin li").eq(n).trigger('click');
     }
 </script>
+    <script type="text/javascript" src="js/jquery.md5.js"></script>
+     <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
     <script type="text/javascript">
         $(function () {
             var txt = {
@@ -95,7 +98,9 @@
                 login: $("#btn_login"),
                 reg:$("#btn_reg")
             }
-            
+            btn.reg.click(function () {
+                location.href = "Register.aspx";
+            })
             btn.login.click(function () {
                 if (txt.username.val() == "") {
                     alert("用户名不能为空！"); return;
@@ -104,6 +109,17 @@
                     alert("请输入密码"); return;
                 }
                 //todo:添加ajax
+                var par = {
+                    userna: txt.username.val(),
+                    pwd:txt.pwd.val()
+                };
+                var param = toQueryString(par);
+                ajaxsend(1004, param, function (response) {
+                    if (response.ErrorCode == 0) {
+                        $.cookie("userid", response.DataPack);
+                        location.href = "Archives.aspx";
+                    }
+                })
             });
         });
     </script>

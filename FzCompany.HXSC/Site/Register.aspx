@@ -153,8 +153,11 @@
                     alert(response.ErrorMsg);
                 }
             };
-            var pwd = $.md5(txt.pwd.val());
-            var param = 'userna=' + txt.username.val() + '&pwd=' + pwd;
+            var par = {
+                userna: txt.username.val(),
+                pwd:txt.pwd.val()
+            }
+            var param =toQueryString(par);
             //发送ajax
             ajaxsend(1001, param, callback);
         });

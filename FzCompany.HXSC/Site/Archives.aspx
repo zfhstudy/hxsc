@@ -7,7 +7,7 @@
     <title>海峡书城</title>
     <link href="css/css.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/slider.css" />
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
 </head>
 

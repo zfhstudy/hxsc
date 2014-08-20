@@ -6,7 +6,7 @@
        {
            url: "../Service.aspx",
            type: "post",
-           dataType: "text",
+           dataType: "json",
            contentType: "application/json",
            data: parstr + '&mac=' + mac,
            success: callback,
