@@ -116,6 +116,7 @@
     <Content Include="Site\deliveryAddress.html" />
     <Content Include="Site\examineBook.html" />
     <Content Include="Site\explainBook.html" />
+    <Content Include="Site\FindPassword.aspx" />
     <Content Include="Site\images\ad.jpg" />
     <Content Include="Site\images\ad1.jpg" />
     <Content Include="Site\images\ad10.jpg" />
@@ -203,7 +204,42 @@
     <Content Include="Site\js\jquery-1.11.1.min.js" />
     <Content Include="Site\js\jquery-1.7.2.min.js" />
     <Content Include="Site\js\jquery.cookie.js" />
+    <Content Include="Site\js\jquery.json-2.4.js" />
     <Content Include="Site\js\jquery.md5.js" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\css\default.css" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\css\uploadify.css" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\img\cancel.png" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\scripts\expressInstall.swf" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\scripts\jquery.uploadify.v2.1.0.min.js" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\scripts\swfobject.js" />
+    <Content Include="Site\js\jquery\plugins\Uploadify\scripts\uploadify.swf" />
+    <Content Include="Site\js\Loading\loading.css" />
+    <Content Include="Site\js\Loading\loading.gif" />
+    <Content Include="Site\js\Loading\loading.js" />
+    <Content Include="Site\js\Loading\transparent.htm" />
+    <Content Include="Site\js\My97DatePicker\calendar.js" />
+    <Content Include="Site\js\My97DatePicker\lang\en.js" />
+    <Content Include="Site\js\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Site\js\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Site\js\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Site\js\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Site\js\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Site\js\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Site\js\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Site\js\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Site\js\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Site\js\My97DatePicker\WdatePicker.js" />
+    <Content Include="Site\js\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Site\js\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Site\js\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Site\js\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Site\js\My97DatePicker\开发包\skin\whyGreen\img.gif" />
     <Content Include="Site\js\pislider.min.js" />
     <Content Include="Site\js\play - 副本.js" />
     <Content Include="Site\js\play.js" />
@@ -229,6 +265,7 @@
     <Content Include="Site\saveCenter.html" />
     <Content Include="Site\search.html" />
     <Content Include="Site\seniorSearch.html" />
+    <Content Include="Site\SetPassword.aspx" />
     <Content Include="Site\setpassword.html" />
     <Content Include="Site\shoppingCart1.html" />
     <Content Include="Site\shoppingCart2.html" />
@@ -493,6 +530,13 @@
     <Compile Include="Site\Archives.aspx.designer.cs">
       <DependentUpon>Archives.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site\FindPassword.aspx.cs">
+      <DependentUpon>FindPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\FindPassword.aspx.designer.cs">
+      <DependentUpon>FindPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -513,6 +557,13 @@
     </Compile>
     <Compile Include="Site\RegSuccess.aspx.designer.cs">
       <DependentUpon>RegSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\SetPassword.aspx.cs">
+      <DependentUpon>SetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\SetPassword.aspx.designer.cs">
+      <DependentUpon>SetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="square.aspx.cs">
       <DependentUpon>square.aspx</DependentUpon>
