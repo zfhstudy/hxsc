@@ -114,12 +114,13 @@
                     pwd:txt.pwd.val()
                 };
                 var param = toQueryString(par);
-                ajaxsend(1004, param, function (response) {
+                ajaxsend(1004, param, function(response) {
                     if (response.ErrorCode == 0) {
-                        $.cookie("userid", response.DataPack);
+                        $.cookie("userid", response.PackData.userid);
+                       
                         location.href = "Archives.aspx";
                     }
-                })
+                });
             });
         });
     </script>

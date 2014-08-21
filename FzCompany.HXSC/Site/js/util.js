@@ -59,3 +59,5 @@ function toQueryString(obj) {
 //    age: [24, 25, 26]
 //})); //name=xesam&age=24&age=25&age=26 
 //*******************************
+var getuserid=$.cookie("userid");
+

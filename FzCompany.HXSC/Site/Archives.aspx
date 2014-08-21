@@ -8,7 +8,6 @@
     <link href="css/css.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/slider.css" />
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -233,18 +232,22 @@
 
     <!--尾部-->
     <div class="footer"><a href="#">关于我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|<a href="#">联系我们</a>&nbsp;&nbsp;&nbsp;&nbsp;|<a href="#">商务合作</a>&nbsp;&nbsp;&nbsp;&nbsp;|<a href="#">意见反馈</a>&nbsp;&nbsp;&nbsp;&nbsp;|<a href="#" class="noa">友情连接</a> </div>
-    <script type="text/javascript">
-        //左边导航栏
-        $(".main_bar_nav_sub dt").toggle(function () {
-            $(this).next(".text").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
-        }, function () { $(this).next(".text").animate({ heigth: 'toggle', opacity: 'toggle' }, "slow"); })
-    </script>
+   
     <script type="text/javascript" src="js/play.js"></script>
     <script type="text/javascript" src="js/citys.js"></script>
     <script type="text/javascript" src="js/jquery.md5.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/util.js"></script>
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+    
+     <script type="text/javascript">
+         ////左边导航栏
+         //$(".main_bar_nav_sub dt").toggle(function () {
+         //    $(this).next(".text").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
+         //}, function () { $(this).next(".text").animate({ heigth: 'toggle', opacity: 'toggle' }, "slow"); })
+    </script>
     <script type="text/javascript">
+        
         function province() {
             var e = document.getElementById('province');
             for (var i = 0; i < provinceName.length; i++) {
@@ -258,7 +261,7 @@
             if (n == "") return;
 
             var a = eval("city" + n); //得到城市的数组名 
-            for (var i = 0; i < a.length; i++) e.options.add(new Option(a[i], i+1));
+            for ( i = 0; i < a.length; i++) e.options.add(new Option(a[i], i + 1));
         }
 
         $("#province").change(function () {
@@ -291,21 +294,23 @@
         var callback = function (response) {
             if (response.ErrorCode == 0) {
                 var data = response.PackData;
-                alert("成功");
+                //alert("成功");
                 txt.nickname.val(data.username);
-                txt.province.val(data.provinceid);
-                txt.city.val(data.cityid);
-                $("input[name='sex']").eq(data.sex).attr("checked", true);
+                txt.province.val(data.provinceid ? data.provinceid : 0);
+                txt.city.val(data.cityid ? data.cityid : 0);
+                $("input[name='sex']").eq(data.sex == "女" ? 1 : 0).attr("checked", true);
                 $("input[name='identity']").eq(data.workid).attr("checked", true);
             }
         };
-        var param = "User_Id=4c707c4687574be2b235813c78537128";
-        ajaxsend(1006, param, callback);
+        var userinfo = getuserid;
+        //var param = "User_Id=4c707c4687574be2b235813c78537128";
+        var param = "User_Id=" + getuserid;
+        //ajaxsend(1006, param, callback);
 
         btn.save.click(function () {
             var par =
             {
-                User_Id: '4c707c4687574be2b235813c78537128',
+                User_Id: getuserid,
                 username: txt.nickname.val(),
                 birthday: txt.birthday.val(),
                 start: 0,
