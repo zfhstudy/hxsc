@@ -176,7 +176,7 @@
                     <input type="radio" name="identity" value="1">
                     学生<input type="radio" name="identity" value="2">
                     上班族<input type="radio" name="identity" value="3">
-                    自由职业者<input type="radio" name="identity" value="" id="4">其它
+                    自由职业者<input type="radio" name="identity" value="4">其它
                 </div>
                 <div class="cbr"></div>
             </div>
@@ -269,7 +269,7 @@
         });
         province(); //初始时给省名下拉菜单赋内容  
         $("input[name='identity']").click(function () {
-            if ($("input[name='identity']:checked").val() == "") {
+            if ($("input[name='identity']:checked").val() == 4) {
                 $("#div_other").show();
             }
             else {
@@ -291,21 +291,24 @@
             save: $("#btn_save")
         }
 
-        var callback = function (response) {
+       
+        var userinfo = getuserid;
+        //var param = "User_Id=4c707c4687574be2b235813c78537128";
+        var param = "User_Id=" + getuserid;
+        ajaxsend(1006, param, function (response) {
             if (response.ErrorCode == 0) {
                 var data = response.PackData;
                 //alert("成功");
                 txt.nickname.val(data.username);
                 txt.province.val(data.provinceid ? data.provinceid : 0);
+                cityName(data.provinceid ? data.provinceid : 0);
                 txt.city.val(data.cityid ? data.cityid : 0);
                 $("input[name='sex']").eq(data.sex == "女" ? 1 : 0).attr("checked", true);
                 $("input[name='identity']").eq(data.workid).attr("checked", true);
+                if (data.workid == 4) $("#div_other").show();
+                txt.workdetail.val(data.workdetail);
             }
-        };
-        var userinfo = getuserid;
-        //var param = "User_Id=4c707c4687574be2b235813c78537128";
-        var param = "User_Id=" + getuserid;
-        //ajaxsend(1006, param, callback);
+        });
 
         btn.save.click(function () {
             var par =
