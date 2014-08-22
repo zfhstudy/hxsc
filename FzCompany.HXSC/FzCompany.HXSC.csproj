@@ -108,6 +108,7 @@
     <Content Include="shoppingCar.aspx" />
     <Content Include="Site\Archives.aspx" />
     <Content Include="Site\archives.html" />
+    <Content Include="Site\BookReview.aspx" />
     <Content Include="Site\buy.html" />
     <Content Include="Site\classificationBook.html" />
     <Content Include="Site\clientIndex.html" />
@@ -253,6 +254,7 @@
     <Content Include="Site\myCollection.html" />
     <Content Include="Site\myEvaluation.html" />
     <Content Include="Site\myOrder.html" />
+    <Content Include="Site\NewBook.aspx" />
     <Content Include="Site\newBook.html" />
     <Content Include="Site\oneselfBuyBook.html" />
     <Content Include="Site\password.html" />
@@ -530,6 +532,13 @@
     <Compile Include="Site\Archives.aspx.designer.cs">
       <DependentUpon>Archives.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site\BookReview.aspx.cs">
+      <DependentUpon>BookReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\BookReview.aspx.designer.cs">
+      <DependentUpon>BookReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site\FindPassword.aspx.cs">
       <DependentUpon>FindPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -543,6 +552,13 @@
     </Compile>
     <Compile Include="Site\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\NewBook.aspx.cs">
+      <DependentUpon>NewBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\NewBook.aspx.designer.cs">
+      <DependentUpon>NewBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>

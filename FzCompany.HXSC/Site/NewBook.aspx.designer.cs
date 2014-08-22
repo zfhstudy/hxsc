@@ -10,6 +10,6 @@
 namespace FzCompany.HXSC.Site {
     
     
-    public partial class SetPassword {
+    public partial class NewBook {
     }
 }

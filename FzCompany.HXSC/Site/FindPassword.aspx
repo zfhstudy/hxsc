@@ -74,8 +74,17 @@
                 //todo:发送短信验证码
             });
             btn.next.click(function () {
+                if (txt.mobile.val() == "") {
+                    alert("手机号不能为空");
+                    return;
+                }
                 if (checkmobile(txt.mobile.val())) {
                     alert("手机格式不对！");
+                    return;
+                }
+               
+                if (txt.code.val() == "") {
+                    alert("请输入验证码！");
                     return;
                 }
                 var param={
